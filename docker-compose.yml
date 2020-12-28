@@ -8,9 +8,9 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-  project:
+  backend:
     restart: always
-    container_name: code
+    container_name: backend
     command : bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     build:
       context: ./Backend/
@@ -31,6 +31,6 @@ services:
       - "3000:3000"
     stdin_open: true
     depends_on:
-      - project
+      - backend
 
     
