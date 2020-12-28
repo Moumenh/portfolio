@@ -1,10 +1,16 @@
-import logo from './logo.svg';
+import React from 'react'
+import Header from './Components/Header/Header'
+import Intro from './Components/Intro/Intro'
+import About from './Components/About/About'
+
 import './App.css';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <h1>Deployed ssssssss</h1>
+      <Header/>
+      {/* <Intro/> */}
+      <About/>
     </div>
   );
 }
