@@ -16,9 +16,16 @@
     align-items: center;
 }
 
+.about__cointainer{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .about__pic{
     height: 300px;
     width: 300px;
+    box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important;
 }
 
 .about__content{
@@ -41,6 +48,7 @@
     border: 2px solid #fff;
     display: inline-block;
     position: relative;
+    transform: translateY(0);
     padding: .8rem 1.6rem;
     font-weight: 700;
     line-height: 1;
@@ -53,6 +61,20 @@
 .btn:hover {
     text-decoration: none;
     background-color: white;
+    transform: translateY(-4px);
     color: rgb(94, 206, 243);
     
 }
+
+@media only screen and (max-width: 738px) {
+    .about{
+        height: 700px;
+        clip-path:none;
+    }
+    .about__cointainer {
+      flex-direction: column;
+    }
+    .about__content{
+        margin-left: 0;
+    }
+  }
