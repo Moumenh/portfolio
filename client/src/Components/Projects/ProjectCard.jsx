@@ -14,8 +14,8 @@ const ProjectCard = () => {
                     <h4>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur modi aperiam animi assumenda unde aspernatur debitis eius? Consequatur in a adipisci laborum suscipit nemo ex veritatis non, quas debitis provident.</h4>
                 </div>
                 <div className='project__btn'>
-                    <a className='btn' style={{ color: '#4989ce', borderColor: '#4989ce' }}> See Live </a>
-                    <a className='btn' style={{ color: '#4989ce', border:'none', marginLeft:'30px' }}> Source Code </a>
+                    <a className='btn' style={{ color: '#074f94', borderColor: '#074f94' }}> See Live </a>
+                    <a className='btn' style={{ color: '#074f94', border:'none', marginLeft:'30px' }}> Source Code </a>
                 </div>
             </div>
         </div>
