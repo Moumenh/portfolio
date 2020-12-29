@@ -12,7 +12,7 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
-    
+
 
 class Technologies(models.Model):
     name = models.CharField(max_length=250)
@@ -31,7 +31,7 @@ class Blogs(models.Model):
     def __str__(self):
         return self.title
 
-    
+
 
 
 
