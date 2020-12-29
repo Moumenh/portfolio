@@ -8,7 +8,7 @@ before_install:
   - cd .. && cd client && docker build -t moumenh/client .
 
 script:
-  - docker run moumenh/client npm test
+  - docker run moumenh/client
   - docker run moumenh/backend
 
 
