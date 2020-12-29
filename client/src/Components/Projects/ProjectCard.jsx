@@ -13,7 +13,11 @@ const ProjectCard = ({project}) => {
             <div className='project__content'>
                 <div>
                     <h1> {project.title} </h1>
-                    <Technology tech={project.tech} />
+                    <div className='project__tech'>
+                    {
+                        project.tech && project.tech.map((tech, i) => <Technology tech={tech} />)
+                    }
+                    </div>
                     <h4 style={{fontWeight:'100'}}>{project.desc}</h4>
                 </div>
                 <div className='project__btn'>
