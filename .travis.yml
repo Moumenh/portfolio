@@ -4,8 +4,9 @@ services:
   - docker
 
 before_install:
+  - cd Backend && docker build -t moumenh/backend .
   - cd client && docker build -t moumenh/client .
-  - cd backend && docker build -t moumenh/backend .
+  
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
