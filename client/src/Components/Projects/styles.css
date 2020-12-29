@@ -1,0 +1,53 @@
+.projects{
+    max-width: 1336px;
+    margin: auto;
+}
+
+.project{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.project__img{
+    width: 45%;
+    height: 500px;
+    background-image: url(https://m0moooz-portfolio.netlify.app/assets/acrux.c155b1c3a3af79e20962a55bde8297ed.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+.project__content{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: start;
+    height: 500px;
+    margin-left: 40px;
+}
+
+.project__btn{
+    display: flex;
+
+}
+
+@media only screen and (max-width: 738px) {
+    .project{
+        flex-direction: column;
+    }
+
+    .project__content{
+        width: 90%;
+        margin-top: 40px;
+    }
+    .project__img{
+        width: 90%;
+        object-fit: contain;
+    }
+  }
+
+
+
