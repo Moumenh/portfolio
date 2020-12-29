@@ -6,7 +6,11 @@ services:
 before_install:
   - cd Backend && docker build -t moumenh/backend .
   - cd .. && cd client && docker build -t moumenh/client .
-  
+
+script:
+  - docker run moumenh/client npm test
+  - docker run moumenh/backend
+
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
