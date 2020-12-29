@@ -4,11 +4,11 @@ from django.db import models
 
 
 class Project(models.Model):
-    title = models.CharField(max_length=250)
-    desc = models.CharField(max_length=1000)
-    image = models.CharField(max_length=1000)
-    link = models.CharField(max_length=1000)
-    github = models.CharField(max_length=1000)
+    title = models.CharField(max_length=250,default='title')
+    desc = models.CharField(max_length=5000,default='desc')
+    image = models.CharField(max_length=1000,default='image')
+    link = models.CharField(max_length=1000,default='link')
+    git = models.CharField(max_length=1000,default='link')
 
     def __str__(self):
         return self.title
