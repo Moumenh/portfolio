@@ -4,9 +4,8 @@
         {
             "name": "db",
             "image": "postgres",
+            "hostname": "db",
             "essential": true,
-            "links": "db",
-            "memory": 300,
             "environment": [
                 {
                     "name": "POSTGRES_DB",
@@ -20,12 +19,14 @@
                     "name": "POSTGRES_PASSWORD",
                     "value": "postgres"
                 }
-            ]
+            ],
+            "links": "db",
+            "memory": 300
         },
         {
             "name": "backend",
-            "links": "db",
             "image": "moumenh/backend",
+            "hostname": "backend",
             "essential": false,
             "portMappings": [
                 {
@@ -33,12 +34,13 @@
                     "containerPort": 80
                 }
             ],
+            "links": "db",
             "memory": 300
         },
         {
             "name": "frontend",
-            "links": "backend",
             "image": "moumenh/client",
+            "hostname": "frontend",
             "essential": false,
             "portMappings": [
                 {
@@ -46,6 +48,7 @@
                     "containerPort": 80
                 }
             ],
+            "links": "backend",
             "memory": 300
         }
     ]
