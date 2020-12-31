@@ -20,7 +20,7 @@
                     "value": "postgres"
                 }
             ],
-            "memory": 300
+            "memory": 128
         },
         {
             "name": "backend",
@@ -33,8 +33,10 @@
                     "containerPort": 80
                 }
             ],
-            "links": "db",
-            "memory": 300
+            "links": [
+                "db"
+            ],
+            "memory": 128
         },
         {
             "name": "frontend",
@@ -47,8 +49,10 @@
                     "containerPort": 80
                 }
             ],
-            "links": "backend",
-            "memory": 300
+            "links": [
+                "backend"
+            ],
+            "memory": 128
         }
     ]
 }
