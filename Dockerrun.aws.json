@@ -1,0 +1,52 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "db",
+            "image": "postgres",
+            "essential": true,
+            "links": "db",
+            "memory": 300,
+            "environment": [
+                {
+                    "name": "POSTGRES_DB",
+                    "value": "postgres"
+                },
+                {
+                    "name": "POSTGRES_USER",
+                    "value": "postgres"
+                },
+                {
+                    "name": "POSTGRES_PASSWORD",
+                    "value": "postgres"
+                }
+            ]
+        },
+        {
+            "name": "backend",
+            "links": "db",
+            "image": "moumenh/backend",
+            "essential": false,
+            "portMappings": [
+                {
+                    "hostPort": 8000,
+                    "containerPort": 80
+                }
+            ],
+            "memory": 300
+        },
+        {
+            "name": "frontend",
+            "links": "backend",
+            "image": "moumenh/client",
+            "essential": false,
+            "portMappings": [
+                {
+                    "hostPort": 3000,
+                    "containerPort": 80
+                }
+            ],
+            "memory": 300
+        }
+    ]
+}

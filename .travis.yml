@@ -17,3 +17,14 @@ after_success:
   - docker push moumenh/client
   - docker push moumenh/backend
 
+deploy:
+  provider: elasticbeanstalk
+  region: eu-central-1
+  app: docker-portfolio
+  env: DockerPortfolio-env
+  bucket_name: elasticbeanstalk-eu-central-1-672828148762
+  bucket_path: docker-portfolio
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
