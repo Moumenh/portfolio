@@ -20,7 +20,6 @@
                     "value": "postgres"
                 }
             ],
-            "links": "db",
             "memory": 300
         },
         {
