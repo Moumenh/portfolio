@@ -6,6 +6,7 @@ services:
 before_install:
   - cd Backend && docker build -t moumenh/backend .
   - cd .. && cd client && docker build -t moumenh/client .
+  - cd ..
 
 script:
   - docker run moumenh/client
