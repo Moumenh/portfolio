@@ -27,12 +27,6 @@
             "image": "moumenh/backend",
             "hostname": "backend",
             "essential": false,
-            "portMappings": [
-                {
-                    "hostPort": 8000,
-                    "containerPort": 80
-                }
-            ],
             "links": [
                 "db"
             ],
@@ -43,14 +37,14 @@
             "image": "moumenh/client",
             "hostname": "frontend",
             "essential": false,
-            "portMappings": [
-                {
-                    "hostPort": 3000,
-                    "containerPort": 80
-                }
-            ],
             "links": [
                 "backend"
+            ],
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
             ],
             "memory": 128
         }

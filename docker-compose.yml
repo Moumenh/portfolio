@@ -9,28 +9,32 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
   backend:
-    restart: always
+    restart: on-failure
     container_name: backend
-    command : bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command : bash -c "python manage.py migrate && python manage.py collectstatic --noinput && python manage.py runserver 0.0.0.0:8000"
     build:
       context: ./Backend/
       dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
+    # ports:
+    #   - "8000:8000"
     depends_on:
       - db
-      
   frontend:
-    restart: always
-    command : npm start
+    restart: on-failure
+    # command : npm start
     container_name: front
     build:
       context: ./client/
       dockerfile: Dockerfile
+    volumes: 
+      - static_volume:/app/backend/static
     ports:
-      - "3000:3000"
+      - "80:80"
     stdin_open: true
     depends_on:
       - backend
+
+volumes: 
+  static_volume:
 
     
