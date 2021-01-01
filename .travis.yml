@@ -17,7 +17,6 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   - docker push moumenh/client
   - docker push moumenh/backend
-  - docker push moumenh/nginx
 
 deploy:
   provider: elasticbeanstalk
