@@ -1,31 +1,31 @@
-sudo: required
+# sudo: required
 
-services:
-  - docker
+# services:
+#   - docker
 
-before_install:
-  - cd Backend && docker build -t moumenh/backend .
-  - cd .. && cd client && docker build -t moumenh/client .
-  - cd ..
+# before_install:
+#   - cd Backend && docker build -t moumenh/backend .
+#   - cd .. && cd client && docker build -t moumenh/client .
+#   - cd ..
 
-script:
-  - docker run moumenh/client
-  - docker run moumenh/backend
+# script:
+#   - docker run moumenh/client
+#   - docker run moumenh/backend
 
 
-after_success:
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push moumenh/client
-  - docker push moumenh/backend
+# after_success:
+#   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+#   - docker push moumenh/client
+#   - docker push moumenh/backend
 
-deploy:
-  provider: elasticbeanstalk
-  region: eu-central-1
-  app: docker-portfolio
-  env: DockerPortfolio-env
-  bucket_name: elasticbeanstalk-eu-central-1-672828148762
-  bucket_path: docker-portfolio
-  on:
-    branch: master
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
+# deploy:
+#   provider: elasticbeanstalk
+#   region: eu-central-1
+#   app: docker-portfolio
+#   env: DockerPortfolio-env
+#   bucket_name: elasticbeanstalk-eu-central-1-672828148762
+#   bucket_path: docker-portfolio
+#   on:
+#     branch: master
+#   access_key_id: $AWS_ACCESS_KEY
+#   secret_access_key: $AWS_SECRET_KEY

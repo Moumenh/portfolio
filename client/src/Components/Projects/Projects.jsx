@@ -15,7 +15,7 @@ const Projects = () => {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         };
-        fetch('/projects/', requestOptions)
+        fetch('http://127.0.0.1:8000/projects/', requestOptions)
             .then(response => response.json())
             .then(data => setProjects(data))
     }
