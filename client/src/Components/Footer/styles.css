@@ -9,8 +9,7 @@
 
 .footer__icons{
     display: flex;
-    width: 5%;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 0;
 }
@@ -20,6 +19,8 @@
     transform: translateY(0);
     transition: all .9s cubic-bezier(.19,1,.22,1);
     width: 30px;
+    font-size: x-large !important;
+    padding: 18px;
 }
 
 .footer a:hover{
