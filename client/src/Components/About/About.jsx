@@ -3,7 +3,7 @@ import './styles.css'
 
 const About = () => {
     return (
-        <div className='about'>
+        <div id='about'>
             <h1 style={{ marginBottom: '60px' }}> About Me </h1>
             <div className='about__cointainer'>
                 <img className='about__pic' src='https://m0moooz-portfolio.netlify.app/assets/profile.0724d76bcb44cbb1cf44b3f18c933be9.jpg' alt='pic' />

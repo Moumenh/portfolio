@@ -21,7 +21,7 @@ const Projects = () => {
     }
 
     return (
-        <div className='projects'>
+        <div id='projects'>
             <h1 style={{ fontFamily: 'Montserrat,sans-serif', color: '#212529', marginBottom: '150px', fontWeight: '100' }}> Projects </h1>
             {
                 projects.length && projects.map((project, i) => <ProjectCard project={project} key={i} />)
