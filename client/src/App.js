@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div className="App">
       <Header />
-      {/* <Intro/> */}
+      {/* <Intro /> */}
       <About />
       <Projects />
       <Contact />
